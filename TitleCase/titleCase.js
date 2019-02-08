@@ -15,3 +15,25 @@
 // titleCase('a clash of KINGS', 'a an the of') // should return: 'A Clash of Kings'
 // titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
 // titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
+
+const capitalizeFirstLetter = word =>
+  `${word.substr(0, 1).toUpperCase()}${word.substr(1).toLowerCase()}`;
+
+const titleCase = (title, minorWords = "") => {
+  const minorWordsArr = minorWords.toLowerCase().split(" ");
+
+  const text = title
+    .split(" ")
+    .map((word, i) => {
+      if (i === 0) return capitalizeFirstLetter(word);
+
+      return minorWordsArr.includes(word.toLowerCase())
+        ? word.toLowerCase()
+        : capitalizeFirstLetter(word);
+    })
+    .join(" ");
+
+  return text;
+};
+
+console.log(titleCase("a clash of KINGS", "a an the of"));
