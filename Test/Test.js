@@ -1,17 +1,16 @@
-function foo1() {
-  return {
-    bar: "hello"
-  };
-}
-
-function foo2() {
-  return;
-  {
-    bar: "hello";
+function addButtons(numButtons) {
+  for (var i = 0; i < numButtons; i++) {
+    var button = document.createElement("input");
+    button.type = "button";
+    button.value = "Button " + (i + 1);
+    button.onclick = function() {
+      alert("Button " + (i + 1) + " clicked");
+    };
+    document.body.appendChild(button);
+    document.body.appendChild(document.createElement("br"));
   }
 }
 
-console.log("foo1 returns:");
-console.log(foo1());
-console.log("foo2 returns:");
-console.log(foo2());
+window.onload = function() {
+  addButtons(5);
+};
