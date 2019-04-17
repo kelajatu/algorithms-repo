@@ -9,8 +9,12 @@
 // Input: [2,2,1]
 // Output: 1
 
-var singleNumer = function(nums) {
-  return nums;
+var singleNumber = function(nums) {
+  let result = 0;
+  for (let i = 0; i < nums.length; i++) {
+    result ^= nums[i];
+  }
+  return result;
 };
 
-console.log(singleNumer([4, 1, 2, 1, 2]));
+console.log(singleNumber([4, 4, 1, 2, 1, 2, 5]));
