@@ -11,7 +11,11 @@
 // The result can be in any order.
 
 var intersect = function(nums1, nums2) {
-  return nums1 + nums2;
+  let i,
+    r = [],
+    [f, l] = nums1.length < nums2.length ? [nums1, num2] : [nums2, nums1];
+  for (let x of f) (i = l.indexOf(x)), ~i && r.push(l.splice(i, 1));
+  return r;
 };
 
-console.log(intersect([4, 9, 5], [9, 4, 9, 8, 4]));
+console.log(intersect([1, 2, 2, 1], [2]));
