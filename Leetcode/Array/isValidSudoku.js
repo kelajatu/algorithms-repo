@@ -23,9 +23,29 @@
 // Output: true
 
 const isValidSudoku = board => {
-  if (board) {
-    return true;
+  const rowRules = new Array(9).fill(0).map(() => new Set());
+  const colRules = new Array(9).fill(0).map(() => new Set());
+  const mixedRules = new Array(9).fill(0).map(() => new Set());
+
+  for (let row = 0; row < 9; row++) {
+    for (let col = 0; col < 9; col++) {
+      let currentVal = board[row][col];
+      let mixedIndex = Math.floor(row / 3) * 3 + Math.floor(col / 3);
+      if (currentVal === ".") {
+      } else if (
+        rowRules[row].has(currentVal) ||
+        colRules[col].has(currentVal) ||
+        mixedRules[mixedIndex].has(currentVal)
+      ) {
+        return false;
+      } else {
+        rowRules[row].add(currentVal);
+        colRules[col].add(currentVal);
+        mixedRules[mixedIndex].add(currentVal);
+      }
+    }
   }
+  return true;
 };
 
 const sudoku = [
