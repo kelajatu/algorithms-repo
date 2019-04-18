@@ -10,7 +10,7 @@
 // Output: ["o","l","l","e","h"]
 
 const reverseString = s => {
-  return s;
+  return s.reverse();
 };
 
 console.log(reverseString(["h", "e", "l", "l", "o"]));
