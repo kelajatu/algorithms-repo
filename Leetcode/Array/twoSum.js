@@ -12,10 +12,11 @@
 const twoSum = (nums, target) => {
   let map = {};
   for (let i = 0; i < nums.length; i++) {
-    const index = target - nums[i];
+    let index = target - nums[i];
     if (index in map) {
       return [map[index], i];
     }
+    map[nums[i]] = i;
   }
   return null;
 };
