@@ -10,5 +10,12 @@
 // Note: You may assume the string contain only lowercase letters.
 
 const firstUniqChar = s => {
-  return s;
+  for (let i = 0; i < s.length; i++) {
+    if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) {
+      return i;
+    }
+  }
+  return -1;
 };
+
+console.log(firstUniqChar("loveleetcode"));
