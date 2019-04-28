@@ -6,5 +6,19 @@
 // Output: true
 
 const isAnagram = (s, t) => {
-  return s;
+  let string1 = s
+    .split("")
+    .sort()
+    .join("")
+    .trim();
+
+  let target = t
+    .split("")
+    .sort()
+    .join("")
+    .trim();
+
+  return string1 === target;
 };
+
+console.log(isAnagram("anagram", "nagaram"));
