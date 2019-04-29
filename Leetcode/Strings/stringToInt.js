@@ -17,8 +17,13 @@
 // Input: "42"
 // Output: 42
 
-const myAtoi = s => {
-  return s;
+//Built in method solution
+// const myAtoi = str => {
+//   return Math.max(Math.min(parseInt(str) || 0, 2147483647), -2147483647);
+// };
+
+const myAtoi = str => {
+  return Math.max(Math.min(parseInt(str) || 0, 2147483647), -2147483647);
 };
 
-console.log(myAtoi(5));
+console.log(myAtoi("987"));
