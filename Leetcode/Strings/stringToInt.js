@@ -18,12 +18,8 @@
 // Output: 42
 
 //Built in method solution
-// const myAtoi = str => {
-//   return Math.max(Math.min(parseInt(str) || 0, 2147483647), -2147483647);
-// };
-
 const myAtoi = str => {
   return Math.max(Math.min(parseInt(str) || 0, 2147483647), -2147483647);
 };
 
-console.log(myAtoi("987"));
+console.log(myAtoi("sosme 987"));
