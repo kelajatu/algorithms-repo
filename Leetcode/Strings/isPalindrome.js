@@ -13,9 +13,7 @@
 
 const isPalindrome = s => {
   if (s === "") return true;
-
   const removedAlpa = s.replace(/\W/g, "").toLowerCase();
-
   return (
     removedAlpa ===
     removedAlpa
