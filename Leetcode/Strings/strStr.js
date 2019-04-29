@@ -7,8 +7,28 @@
 // Input: haystack = "hello", needle = "ll"
 // Output: 2
 
+// Example 2:
+
+// Input: haystack = "aaaaa", needle = "bba"
+// Output: -1
+// Clarification:
+
+// What should we return when needle is an empty string? This is a great question to ask during an interview.
+
+// For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C's strstr() and Java's indexOf().
+
 const strStr = (haystack, needle) => {
-  return needle;
+  if (haystack === needle || needle === "") return 0;
+
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i] === needle[0]) {
+      let temp = haystack.substring(i, i + needle.length);
+      if (temp === needle) {
+        return i;
+      }
+    }
+  }
+  return -1;
 };
 
-console.log(strStr("aaaaa", "bba"));
+console.log(strStr("hello", "ll"));
