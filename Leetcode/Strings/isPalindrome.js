@@ -12,5 +12,17 @@
 // Output: false
 
 const isPalindrome = s => {
-  return r;
+  if (s === "") return true;
+
+  const removedAlpa = s.replace(/\W/g, "").toLowerCase();
+
+  return (
+    removedAlpa ===
+    removedAlpa
+      .split("")
+      .reverse()
+      .join("")
+  );
 };
+
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
