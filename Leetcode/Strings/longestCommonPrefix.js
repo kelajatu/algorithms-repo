@@ -16,7 +16,16 @@
 // All given inputs are in lowercase letters a-z.
 
 const longestCommonPrefix = str => {
-  return str;
+  if (!str.length) return "";
+
+  for (let i = 0; i < str[0].length; i++) {
+    for (let s of str) {
+      if (s[i] !== str[0][i]) {
+        return s.slice(0, i);
+      }
+    }
+  }
+  return str[0];
 };
 
 console.log(longestCommonPrefix(["flower", "flow", "flight"]));
