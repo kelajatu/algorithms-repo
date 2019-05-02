@@ -19,8 +19,13 @@
 // Output: "1"
 
 const countAndSay = n => {
-  let arr = [];
-  return arr.toString();
+  for (i = 0, newString = "1"; i < n - 1; i++) {
+    newString = newString
+      .match(/(.)\1*/g)
+      .reduce((acc, val) => acc + `${val.length}${val[0]}`, "");
+  }
+
+  return newString;
 };
 
 console.log(countAndSay(4));
