@@ -9,7 +9,14 @@
 // A linked list can be reversed either iteratively or recursively. Could you implement both?
 
 var reverseList = function(head) {
-  return head;
+  var prev = null;
+  while (head) {
+    var next = head.next;
+    head.next = prev;
+    prev = head;
+    head = next;
+  }
+  return prev;
 };
 
 function ListNode(val) {
