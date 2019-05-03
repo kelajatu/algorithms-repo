@@ -13,8 +13,18 @@
 
 // Could you do this in one pass?
 
-const removeNthFromEnd = (head, n) => {
-  return head;
+var removeNthFromEnd = function(head, n) {
+  var left,
+    before,
+    right = head;
+  left = before = { next: head };
+  while (n--) right = right.next;
+  while (right) {
+    right = right.next;
+    left = left.next;
+  }
+  left.next = left.next.next;
+  return before.next;
 };
 
-console.log(removeNthFromEnd(2, 2));
+console.log(removeNthFromEnd([1, 2, 3, 4, 5], 2));
