@@ -32,3 +32,15 @@
 // 16
 // 8.0
 // HackerRank is the best place to learn and practice coding!
+
+var d1;
+var s1;
+i1 = parseInt(readLine());
+d1 = parseFloat(readLine());
+s1 = readLine();
+
+console.log(i + i1);
+
+console.log((d + d1).toFixed(1));
+
+console.log(s + s1);
