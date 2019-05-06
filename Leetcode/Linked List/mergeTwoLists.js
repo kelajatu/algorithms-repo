@@ -6,21 +6,21 @@
 // Output: 1->1->2->3->4->4
 
 var mergeTwoLists = function(l1, l2) {
-  var mergedHead = { val: -1, next: null },
-    crt = mergedHead;
+  let res = new ListNode();
+  let cur = res;
   while (l1 && l2) {
-    if (l1.val > l2.val) {
-      crt.next = l1;
+    if (l1.val <= l2.val) {
+      cur.next = new ListNode(l1.val);
       l1 = l1.next;
+      cur = cur.next;
     } else {
-      crt.next = l1;
-      l1 = l1.next;
+      cur.next = new ListNode(l2.val);
+      l2 = l2.next;
+      cur = cur.next;
     }
-    crt = crt.next;
   }
-  crt.next = l1 || l2;
-
-  return mergedHead.next;
+  cur.next = l1 || l2;
+  return res.next;
 };
 
 console.log(mergeTwoLists());
