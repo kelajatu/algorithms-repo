@@ -12,5 +12,12 @@
 // Could you do it in O(n) time and O(1) space?
 
 var isPalindrome = function(head) {
-  return head;
+  let first = "";
+  let second = "";
+  while (head) {
+    first = first + head.val;
+    second = head.val + second;
+    head = head.next;
+  }
+  return first === second;
 };
