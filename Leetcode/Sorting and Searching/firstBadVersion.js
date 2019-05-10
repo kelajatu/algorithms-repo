@@ -15,5 +15,14 @@
 // Then 4 is the first bad version.
 
 var solution = function(isBadVersion) {
-  return function(n) {};
+  return function(n) {
+    let start = 1,
+      end = n;
+
+    while (start < end) {
+      let mid = ~~((start + end) / 2);
+      isBadVersion(mid) ? (end = mid) : (start = mid + 1);
+    }
+    return end;
+  };
 };
