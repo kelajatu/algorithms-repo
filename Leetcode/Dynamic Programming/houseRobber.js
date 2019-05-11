@@ -21,7 +21,6 @@ var rob = function(nums) {
   let totals = [nums[0], Math.max(nums[0], nums[1])];
   for (let i = 2; i < nums.length; i++) {
     totals[i] = Math.max(totals[i - 1], totals[i - 2] + nums[i]);
-    console.log(nums[i]);
   }
   return totals[totals.length - 1];
 };
