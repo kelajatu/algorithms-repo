@@ -4,18 +4,15 @@
 
 function topSum(arr) {
   var biggest = arr[0],
-    second = arr[1],
-    len = arr.length,
-    i = 2;
+    second = arr[1];
 
-  if (len < 2) return null;
-
+  if (arr.length < 2) return null;
   if (biggest < second) {
     biggest = arr[1];
     second = arr[0];
   }
 
-  for (; i < len; i++) {
+  for (let i = 2; i < arr.length; i++) {
     if (arr[i] > biggest) {
       second = biggest;
       biggest = arr[i];
@@ -26,4 +23,5 @@ function topSum(arr) {
   return biggest + second;
 }
 
-console.log(topSum[(1, 2, 3, 4)]);
+console.log(topSum([4, 9, 3, 20]));
+// console.log(topSum([1]));
