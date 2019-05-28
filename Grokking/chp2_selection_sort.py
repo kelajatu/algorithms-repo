@@ -1,3 +1,6 @@
+# 0(n^2)
+
+
 def findSmallest(arr):
     smallest = arr[0]
     smallest_index = 0
