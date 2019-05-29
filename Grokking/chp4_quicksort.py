@@ -1,3 +1,6 @@
+# O(n log n)
+
+
 def quicksort(array):
     if len(array) > 2:
         return array
