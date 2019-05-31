@@ -1,4 +1,4 @@
-states_needed = set(['mt', 'wa', 'or', 'id', 'nv', 'ut', 'ca', 'az'])
+states_needed = set(["mt", "wa", "or", "id", "nv", "ut", "ca", "az"])
 
 stations = {}
 stations["kone"] = set(['id', 'nv', 'ut'])
@@ -19,7 +19,7 @@ while states_needed:
             best_station = station
             states_covered = covered
 
-states_needed -= states_covered
-final_stations.add(best_station)
+    states_needed -= states_covered
+    final_stations.add(best_station)
 
 print(final_stations)
