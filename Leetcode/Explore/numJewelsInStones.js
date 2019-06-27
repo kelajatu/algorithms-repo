@@ -11,18 +11,16 @@
 // Input: J = "z", S = "ZZ"
 // Output: 0
 
-
-var numJewelsInStones = function(J, S){
-    let store = 0;
-    for(let i = 0; i < J.length; i++){
-        for(let j = 0; j < S.length; j++){
-            if(J[i] === S[j]){
-                store++;
-            }
-        }
+var numJewelsInStones = function(J, S) {
+  let store = 0;
+  for (let i = 0; i < J.length; i++) {
+    for (let j = 0; j < S.length; j++) {
+      if (J[i] === S[j]) {
+        store++;
+      }
     }
-    return store
-}
+  }
+  return store;
+};
 
-
-console.log(numJewelsInStones("aA", "aAAbbbb"))
+console.log(numJewelsInStones("aA", "aAAbbbb"));
