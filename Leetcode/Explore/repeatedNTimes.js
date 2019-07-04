@@ -14,7 +14,6 @@ var repeatedNTimes = function(A) {
       return sortedArr[i];
     }
   }
-  //   return sortedArr;
 };
 
 console.log(repeatedNTimes([1, 5, 2, 3, 3]));
