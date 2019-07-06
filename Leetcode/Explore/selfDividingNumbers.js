@@ -18,7 +18,6 @@ var selfDividingNumbers = function(left, right) {
   for (let num = left; num <= right; num += 1) {
     d = num;
     r = num % 10;
-
     while (r && !(num % r)) {
       d = Math.floor(d / 10);
       r = d % 10;
