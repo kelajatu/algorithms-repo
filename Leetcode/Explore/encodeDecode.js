@@ -18,3 +18,9 @@ var decode = function(shortUrl) {
  * Your functions will be called as such:
  * decode(encode(url));
  */
+
+console.log(
+  encode(
+    decode("https://www.youtube.com/watch?v=o8kmjvoMDbU&list=WL&index=11&t=3s")
+  )
+);
